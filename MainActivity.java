@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btn1,btn2,btn3,btn4,btn5,btn6,btn0,btn7,btn8,btn9,btnmas,btnmenos,btnigual,btnpor,btndiv,btnBorrar,btnpunto;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     String result1="0 + ";
     String signo;
     String [] Valores;
+    DecimalFormat format = new DecimalFormat("0.000");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 edtvalor.setText("");
                 result1="0 + ";
-                rpta.setText("");
+                rpta.setText("0");
 
 
             }
@@ -160,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 if (signo.equals("/")){
                     result = temp/temp1;
                 }
-                rpta.setText(result+"");
+                rpta.setText(format.format(result)+"");
                 result1 = String.valueOf(result + " + ");
 
             }
@@ -187,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 if (signo.equals("/")){
                     result = temp/temp1;
                 }
-                rpta.setText(result+"");
+                rpta.setText(format.format(result)+"");
                 result1 = String.valueOf(result + " - ");
 
             }
@@ -214,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
                 if (signo.equals("/")){
                     result = temp/temp1;
                 }
-                rpta.setText(result+"");
+                rpta.setText(format.format(result)+"");
                 result1 = String.valueOf(result + " * ");
 
             }
@@ -241,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
                 if (signo.equals("/")){
                     result = temp/temp1;
                 }
-                rpta.setText(result+"");
+                rpta.setText(format.format(result)+"");
                 result1 = String.valueOf(result + " / ");
 
             }
@@ -266,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                 if (signo.equals("/")){
                     result = temp/temp1;
                 }
-                rpta.setText(result+"");
+                rpta.setText(format.format(result)+"");
             }
         });
 
